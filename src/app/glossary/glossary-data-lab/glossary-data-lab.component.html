@@ -1,0 +1,67 @@
+<mat-card>
+  <div
+    class="item-glossary"
+    *ngFor="let data of dataLaboratory; let indice = index"
+  >
+    <div *ngIf="indice == 0; else loggedOut">
+      <div
+        *ngIf="
+          data.properties.concept.slice(0, 1) == dataLaboratoryTitle[indice];
+          else loggedOut
+        "
+      >
+        <span class="title">{{ data.properties.concept.slice(0, 1) }} </span>
+        <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> {{ data.properties.concept }} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ data.properties.definition }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+
+    <ng-template #loggedOut>
+      <div
+        *ngIf="
+          data.properties.concept.slice(0, 1) ==
+            dataLaboratoryTitle[indice - 1];
+          else loggedOut2
+        "
+      >
+        <mat-accordion>
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> {{ data.properties.concept }} </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{ data.properties.definition }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </ng-template>
+
+    <ng-template #loggedOut2>
+      <span class="title">{{ data.properties.concept.slice(0, 1) }}</span>
+
+      <mat-accordion>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title> {{ data.properties.concept }} </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ data.properties.definition }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-template>
+  </div>
+</mat-card>
+

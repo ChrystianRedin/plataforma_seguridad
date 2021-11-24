@@ -1,0 +1,316 @@
+<mat-card class="text-center">
+  <mat-card-content>
+    <div class="text-justify" style="color: #4c4c59">
+      <div class="start">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                1. ¿Para qué sirve la herramienta de incluir ceros?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Cabe la posibilidad de que a partir de ciertos filtros
+              generados, por ejemplo: agrupar por fecha en un municipio (con
+              poca actividad delictiva), existan valores faltantes. El algoritmo
+              del laboratorio de datos funciona de manera que muestre únicamente
+              los valores filtrados, por lo que si en la base de datos no
+              existen fechas, por default no se pondrán esas fechas. Esto puede
+              provocar errores de visualización como confundir incrementos y
+              decrementos en la incidencia delictiva. La herramienta de incluir
+              ceros, resuelve este problema al incluir los valores faltantes en
+              esos filtros seleccionados y se le asigna un valor de cero. Con
+              esto la visualización de la gráfica cambia. A continuación,
+              dejamos dos gráficas que tienen los mismos filtros pero una usa
+              “incluir ceros” y la otra no. Se ve en la serie de tiempo (línea)
+              el cambio de comportamiento dependiendo del uso de la herramienta
+              o no.
+            </p>
+            <div class="img-lab">
+              <div class="hijo_1">
+                <mat-card-header>
+                  <mat-card-title>Sin incluir ceros</mat-card-title>
+                </mat-card-header>
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/1_sin_ceros.png"
+                  alt=""
+                />
+              </div>
+              <div class="hijo_2">
+                <mat-card-header>
+                  <mat-card-title>Incluyendo ceros</mat-card-title>
+                </mat-card-header>
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/1_incluyendo_ceros.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                2. ¿Por qué no dejar en automático la herramienta de incluir
+                ceros?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Existen una infinidad de combinaciones posibles para crear
+              gráficos, algunas están relacionadas con variables de tiempo (Año,
+              Mes y Fecha) para las cuales es importante incluir la herramienta
+              incluir ceros. Pero dependiendo del tipo de gráfico y del gusto de
+              la persona usuaria es que puede usar esa herramienta o no. Por
+              ejemplo: Como se aprecia en la pregunta 1, la herramienta incluir
+              ceros mejora la visualización acerca de los incrementos y
+              decrementos en el tipo de gráfico “dispersión” pero la
+              visualización cambia si se escoge el tipo de gráfico “barras” y la
+              herramienta puede no ser del agrado de la persona usuaria. A
+              continuación, mostraremos dos imágenes usando la herramienta y
+              excluyéndola.
+            </p>
+            <div class="img-lab">
+              <div class="hijo_1">
+                <mat-card-header>
+                  <mat-card-title>Sin incluir ceros</mat-card-title>
+                </mat-card-header>
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/2_sin_ceros.png"
+                  alt=""
+                />
+              </div>
+              <div class="hijo_2">
+                <mat-card-header>
+                  <mat-card-title>Incluyendo ceros</mat-card-title>
+                </mat-card-header>
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/2_incluyendo_ceros.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <p>
+              Utilizando la herramienta, la gráfica presenta todo el periodo
+              seleccionado y en la leyenda muestra todos los días de ese periodo
+              aunque no tenga algún valor. Si no se usa la herramienta,
+              únicamente muestra las fechas que hubo algún acontecimiento y el
+              tamaño de la gráfica se adecua a solo las observaciones con
+              valores. Además, los gráficos de tipo distribución (histograma y
+              densidad) les generaría algún sesgo en caso de incluir la
+              herramienta. Debido a todos los casos descritos anteriormente y a
+              la política de libertad con la que fue creada la plataforma, es
+              que dejamos a la persona usuaria la posibilidad de elegir usar la
+              herramienta o no, en todos los casos posibles.
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                3. ¿Cómo interpretar las gráficas de histograma y densidad?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Ambas gráficas representan la distribución de las
+              observaciones, ésta depende de la variable de agrupación. La
+              utilidad de estas gráficas sirve para encontrar algún patrón en la
+              distribución o si existe algún sesgo. Éstas se interpretan
+              observando la altura de las barras o de las figuras mostradas;
+              donde los puntos más altos representan la moda y los bajos, los
+              casos menos frecuentes.
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                4. ¿Cuál es la diferencia entre mapa de calor y conglomerados
+                para la visualización del mapa?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- El mapa de calor, muestra la densidad delictiva dependiendo del
+              acercamiento o alejamiento que se tenga en el mapa, no muestra
+              ninguna información adicional. En cambio, el mapa de
+              conglomerados, genera clusters de cercanía que se modifican
+              dependiendo del acercamiento que haga la persona usuaria. Además,
+              en el zoom final se muestran unos círculos diferentes a los
+              generados por los clusters, en caso de que la persona usuaria le
+              dé clic, éstos mostrarán información estadística (día de la
+              semana, fecha, delito y víctimas) de la carpeta de investigación.
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                5. ¿Por qué se agruparon de esa manera los delitos?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Nos basamos en la “Norma Técnica para la Clasificación Nacional
+              de Delitos para Fines Estadísticos”, en la cual menciona que todos
+              los delitos se pueden categorizar en un “bien jurídico”. La propia
+              norma técnica te da la clasificación de los delitos por bien
+              jurídico.
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                6. ¿Cómo puedo descargar la base de datos?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- En la plataforma de laboratorio de datos, entre la sección de
+              filtros y la gráfica existe una barra gris. Al costado derecho de
+              esa barra existe un botón con el nombre “Descargar (.csv)”, al
+              hacer clic se descargará automáticamente la base de datos
+              dependiendo de todos los filtros puestos. En caso de querer
+              descargar la base de datos completa, no se debe seleccionar ningún
+              filtro y escoger todo el periodo (desde 1° de enero de 2017 hasta
+              el último mes actualizado).
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title> 7. Cruces sugeridos: </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title class="mat-panel-title-sub">
+                  Gráfico de dispersión del total de bienes afectados desglosado
+                  por día de la semana.
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>
+                Presenta el total por día de la semana agrupados por bien
+                jurídico, está visualización sirve para comparar días de la
+                semana dependiendo su bien jurídico afectado. Con esto se puede
+                ver que relacionado al patrimonio si hay diferencia
+                significativa si es fin de semana o no, pero en otros bienes
+                jurídicos no es tan evidente.
+              </p>
+              <div class="img-lab">
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/7.1.png"
+                  alt=""
+                />
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title class="mat-panel-title-sub">
+                  Gráfico de barras con el total por delito.
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>
+                Presenta el total de carpetas de investigación por tipo de
+                delito, sirve para ver cuáles son los delitos con mayor
+                incidencia, esto dependerá de los filtros temporales y
+                geográficos que la persona usuaria realice.
+              </p>
+              <div class="img-lab">
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/7.2.png"
+                  alt=""
+                />
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title class="mat-panel-title-sub">
+                  Gráfico de histograma de la fecha desglosado por mes del año
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>
+                Para este gráfico se utilizó el filtro de bien jurídico: La
+                familia. Para representar la distribución de los días
+                dependiendo del mes del año. En este caso son 12 histogramas
+                (uno por cada mes del año) y se puede ver que referente al bien
+                jurídico de la familia, junio fue el mes que tuvo más días con
+                mayor incidencia, iniciando más de 60 carpetas de investigación
+                en un solo día. Mientras los meses que se tuvieron días que
+                iniciaron menos carpetas de investigación es septiembre y
+                octubre.
+              </p>
+              <div class="img-lab">
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/7.3.png"
+                  alt=""
+                />
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel
+              (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title class="mat-panel-title-sub">
+                  Gráfico de densidad de los meses desglosado por año
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>
+                Para este gráfico se utilizó el filtro de bien jurídico: La vida
+                y la integridad corporal y un filtro temporal para seleccionar
+                los años 2018 y 2019. Para representar la distribución de los
+                meses dependiendo año. Con esta gráfica se visualiza que la
+                probabilidad de que un mes tenga menor cantidad de carpetas de
+                investigación es mayor en 2019 que en 2018. Por lo que se podría
+                suponer que en 2018 fue un año con mayor incidencia delictiva
+                que 2019.
+              </p>
+              <div class="img-lab">
+                <img
+                  class="img-lab-graph"
+                  src="assets/img/faq-data-lab/7.4.png"
+                  alt=""
+                />
+              </div>
+            </mat-expansion-panel>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

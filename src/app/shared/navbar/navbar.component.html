@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg fixed-top" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']">
+                <img src="assets/img/logo_plataforma.png" class="main-logo">
+            </a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/']">
+                        <i class="">Inicio</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/laboratorio']">
+                        <i class="">Laboratorio de datos</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/comparativa']">
+                        <i class="">Comparativa Estados</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/glosario']">
+                        <i class="">Glosario</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/metodologia']">
+                        <i class="">Nota Metodol&oacute;gica</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/aprendizaje']">
+                        <i class="">Área de Aprendizaje</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/plataforma']">
+                        <i class="">Reporte Mensual</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,328 @@
+<div *ngIf="divActiveChildDash == 'lab-statistics'" class="data-lab">
+  <br>
+  <div class="presentation-subtitle">Estadísticas iniciales</div>
+  <br>
+  <div class="presentation-subtitle">Tasa</div>
+  <p>
+    La tasa se calcula con las proyecciones poblacionales del Consejo Nacional
+    de Población (CONAPO) a mitad del año en cuestión, mediante la siguiente
+    fórmula:
+  </p>
+  <div class="eq">
+    <div class="eq-tasa">
+      <i>tasa = carpetas de investigación </i>
+      <span class="intsuma">
+        <span class="sum-frac">(</span>
+      </span>
+      <span class="fraction">
+        <span class="fup"><i>100000</i></span>
+        <span class="bar">/</span>
+        <span class="fdn"><i>población de Jalisco</i></span>
+      </span>
+      <span class="intsuma">
+        <span class="sum-frac">)</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="presentation-subtitle">Promedio</div>
+  <p>
+    El promedio se calcula como la media aritmética simple de las carpetas
+    abiertas mensualmente en los 12 periodos anteriores al último mes del que se
+    cuenta con información, esto es:
+  </p>
+  <div class="eq">
+    <div class="eq-promedio">
+      <i>promedio</i> =
+      <div class="fraction">
+        <span class="fup">1</span>
+        <span class="bar">/</span>
+        <span class="fdn">12</span>
+      </div>
+      <span class="intsuma">
+        <span class="lim">12</span>
+        <span class="sum-frac">&sum;</span>
+        <span class="lim"><i>t</i> =1</span>
+      </span>
+      <i>carpetas abiertas en el mes T - t</i>
+    </div>
+  </div>
+  <p>Donde <i>T</i> es el último mes del que se cuenta con información.</p>
+</div>
+<br>
+<div *ngIf="divActiveChildDash == 'lab-filters'" class="data-lab">
+  <div class="presentation-subtitle">Filtros</div>
+  <p>
+    La sección de filtros es interactiva y cuenta con interdependencias que
+    responden a las elecciones de quien utilice la plataforma. Las opciones
+    elegidas o desmarcadas repercuten en la suma total de carpetas mostradas en
+    la gráfica y en el mapa, así como en la descarga de los datos en formato
+    <em>.csv</em>.
+  </p>
+  <br>
+  <div class="presentation-subtitle">Bien jurídico afectado</div>
+  <p>
+    La persona usuaria puede seleccionar una, varias, todas o ninguna de las
+    opciones de este campo. No elegir alguna equivale a seleccionar todas. En
+    caso de tener una o más opciones marcadas, esto limitará las alternativas
+    del campo “Delitos” a aquellos que afectan solamente a los bienes elegidos.
+  </p>
+  <p>
+    Si la persona usuaria decidiera incluir solo “El patrimonio”, esto activaría
+    el campo “Forma de acción”. En caso de elegir únicamente “La vida y la
+    integridad corporal”, se habilitarán las opciones “Comisión” y “Tipo”. El
+    filtro de “Comisión” se refiere a si el subtipo de delito es “doloso” o
+    “culposo”. En el filtro de “Tipo”, la persona usuaria tendrá las opciones de
+    “Carpetas” o “Víctimas”. Las carpetas se refieren a la cantidad de eventos
+    que sucedieron, mientras que víctimas es total de personas que fueron
+    agredidas por el o los delitos. Al seleccionar los bienes jurídicos
+    afectados “el patrimonio” y “la vida y la integridad corporal” los filtros
+    especiales de forma de acción y comisión, desaparecerán y no se podrá hacer
+    énfasis en las diferentes características de cada uno de los bienes
+    jurídicos.
+  </p>
+  <br>
+
+  <div class="presentation-subtitle">Delitos</div>
+  <p>
+    La persona usuaria puede seleccionar una, varias, todas o ninguna de las
+    opciones de este campo. No elegir alguna equivale a seleccionar todas. En
+    caso de incluir uno o más delitos que afecten solamente al patrimonio, se
+    activará el filtro de “Forma de acción”. Asimismo, de elegir solamente
+    crímenes contra la vida y la integridad corporal, se habilitarían los campos
+    “Comisión” y “Tipo”. En caso de elegir “Homicidio doloso” se abrirá un nuevo
+    filtro llamado “Situación” en la cual, la persona usuaria puede elegir si la
+    carpeta de investigación se refiere a una agresión directa o si es a partir
+    de una fosa encontrada en la entidad. Se pueden seleccionar una, varias,
+    todas o ninguna de las opciones de este campo. No elegir alguna equivale a
+    seleccionar todas.
+  </p>
+  <br>
+  <div class="presentation-subtitle">Periodo</div>
+  <p>
+    La persona usuaria puede seleccionar el periodo que desee, mientras esté
+    dentro de las fechas en las que se cuenta con información, lo que la misma
+    aplicación limita. El orden de la selección no es relevante, pues el
+    programa filtrará siempre desde la fecha mínima elegida hasta la máxima. Es
+    importante notar que, de no seleccionar periodos mensuales o anuales
+    completos, las carpetas de investigación que hubiesen sido abiertas en los
+    días faltantes, no estarán incluidas, aun cuando el mes o el año se
+    encuentren en el gráfico.
+  </p>
+  <br>
+  <div class="presentation-subtitle">Municipio</div>
+  <p>
+    La persona usuaria puede seleccionar una, varias, todas o ninguna de las
+    opciones de este campo. No elegir alguna equivale a seleccionar todas. En
+    caso de que se seleccionen uno o más municipios, el filtro de colonias se
+    activará, pudiendo así limitar los datos, incluyendo sólo carpetas abiertas
+    por delitos en las colonias seleccionadas.
+  </p>
+</div>
+<br>
+<div *ngIf="divActiveChildDash == 'lab-downloads'" class="data-lab">
+  <div class="presentation-subtitle">Descarga</div>
+  <p>
+    Al presionar el botón “Descargar (.csv)”, los datos que se obtendrán estarán
+    sujetos a los filtros aplicados, en caso de existir alguno.
+  </p>
+</div>
+<br>
+<div *ngIf="divActiveChildDash == 'lab-graphics'" class="data-lab">
+  <div class="presentation-subtitle">Gráficas</div>
+  <br>
+  <p>
+    Todas las gráficas están diseñadas con el fin de que la persona usuaria
+    pueda tener flexibilidad en el análisis que busca realizar. Dependiendo del
+    tipo de visualización elegido, las opciones serán distintas. Existe solo una
+    opción común a todas las gráficas: “Incluir ceros”. Esta fue incluida con el
+    propósito de mostrar aquellas observaciones que, aunque pertenecen a los
+    filtros, no observaron la apertura de ninguna carpeta de investigación.
+    Consideramos que puede ser especialmente útil en histogramas o gráficas de
+    densidad, cuando la mayor parte de los casos (días, municipios, por
+    ejemplo.) tienen cero carpetas, lo que podría limitar la visualización.
+    También es importante emplear esta selección cuando se presentan gráficas de
+    series de tiempo, ya que, de incluir líneas, el no incorporar fechas con
+    cero acontecimientos, podría alterar la percepción de lo que realmente
+    ocurrió en el periodo.
+  </p>
+  <br>
+  <div class="presentation-subtitle" style="text-align: center">Tipo de gráfica</div>
+  <br>
+  <div class="content-graph">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Dispersión">
+        <p class="tab-txt">
+          Este tipo de gráfica presenta, mediante el uso del plano cartesiano,
+          los valores de dos variables en conjunto. La persona usuaria puede
+          elegir de entre un grupo de variables cuáles emplear, tanto en el eje
+          de abscisas, como en el de ordenadas. Las selecciones posibles
+          dependerán de los filtros realizados por la persona usuaria.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-gra-dispersion.png"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+      <mat-tab label="Puntos, puntos + líneas">
+        <p class="tab-txt">
+          Este tipo de gráfica presenta, mediante el uso del plano cartesiano,
+          los valores de dos variables en conjunto. La persona usuaria puede
+          elegir de entre un grupo de variables cuáles emplear, tanto en el eje
+          de abscisas, como en el de ordenadas. Las selecciones posibles
+          dependerán de los filtros realizados por la persona usuaria.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-gra-points-lines.png"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+      <mat-tab label="Desglosar">
+        <p class="tab-txt">
+          Las variables por las que se puede desglosar el gráfico también
+          dependen de los filtros que se hayan seleccionado. Se recomienda poner
+          especial cuidado al desglosar por día de la semana, ya que
+          aproximadamente el 10% de las carpetas de investigación contienen una
+          fecha distinta a la de ocurrencia del suceso que reportan.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-gra-breakdown.png"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+      <mat-tab label="Barras">
+        <p class="tab-txt">
+          Este gráfico presenta el total de carpetas de investigación o víctimas
+          para la variable de agrupación seleccionada.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-gra-bars.png"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+      <mat-tab label="Densidad">
+        <p class="tab-txt">
+          Esta gráfica se construye a partir de la estimación <em>kernel</em> de
+          la densidad de la variable de agrupación con respecto a la cantidad de
+          carpetas de investigación o de víctimas mostradas en el eje de las
+          abscisas. Se puede desglosar por distintas variables.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-gra-density.png"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<div *ngIf="divActiveChildDash == 'lab-map'" class="data-lab">
+  <div class="presentation-subtitle">Mapa</div>
+  <p>
+    Cada una de las selecciones en el apartado de filtros modifica la
+    visualización del mapa. Dependiendo del tipo de visualización que se elija,
+    será el desglose de información que presente el mapa. En el mapa únicamente
+    se muestran las carpetas de investigación que están georreferenciadas
+    (tienen coordenadas), los datos que no tienen esos atributos se eliminan
+    para la visualización del mapa, pero se conservan para las gráficas. Cabe
+    aclarar que la georreferenciación de las carpetas de investigación se ubica
+    en la esquina más cercana.
+  </p>
+  <ul style="font-size: 22px">
+    <li>
+      <span>Día de la semana.</span>
+    </li>
+    <li>
+      <span>Fecha</span>
+    </li>
+    <li>
+      <span>Tipo de delito</span>
+    </li>
+    <li>
+      <span
+        >Total de víctimas (Para el bien jurídico de la vida y la integridad
+        corporal se puede obtener la variable de víctimas, en caso de ser un
+        bien jurídico diferente, se pone NA [No aplica]).</span
+      >
+    </li>
+    <li style="list-style: none; padding-top: 1em">
+      <span
+        >Para la visualización de conglomerados, existe la posibilidad de
+        “mostrar leyenda”. Esta leyenda se refiere al color de la última
+        desagregación que tiene el mapa, son los círculos de colores que salen
+        cuando el zoom es muy cercano a los clústeres o se le da clic a un
+        clúster y éste genera desagregación de círculos de varios colores
+        relacionados a los colores de la leyenda. La leyenda también se puede
+        modificar y abajo del recuadro llamado “Mostrar leyenda” se tiene una
+        sección llamada “Variable” en la cual existe la posibilidad de
+        seleccionar y así modificar los colores de la leyenda y de la última
+        desagregación de los círculos.</span
+      >
+    </li>
+  </ul>
+  <div class="presentation-subtitle" style="text-align: center">
+    Visualización del mapa
+  </div>
+  <div class="content-graph">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Mapa de calor">
+        <p class="tab-txt">
+          Es una representación gráfica utilizando colores para indicar el nivel
+          de concentración de los datos. En este caso se utiliza el color azul
+          para indicar que hubo actividad delictiva en esa ubicación geográfica
+          y colores brillantes (amarillo y rojo) presentan mayor concentración
+          delictiva en comparación con otros lugares. La escala de concentración
+          empieza desde un azul oscuro (indica poca concentración), seguido por
+          un azul cielo que indican mayor concentración que el color oscuro,
+          después pasa a un color verde, el siguiente color es amarillo y el
+          último color en la escala es rojo, que indica mucha concentración
+          delictiva. El mapa de calor cambia conforme al zoom que se pone, la
+          escala depende de la visualización que se esté mostrando en ese
+          momento.
+        </p>
+        <div class="img-lab">
+          <img
+            class="img-lab-map-heatmap"
+            src="assets/img/methodological-note/lab-map-heatmap.png"
+            style="width: 100%;"
+            alt=""
+          />
+        </div>
+      </mat-tab>
+      <mat-tab label="Conglomerados">
+        <p class="tab-txt">
+          El mapa de conglomerados presenta grupos próximos geográficamente. La
+          proximidad depende del área de visualización y del zoom que tenga el
+          mapa. Conforme se tenga mayor zoom los datos pueden ir cambiando de
+          clústeres o salirse de ellos y quedarse solos. Cuando el dato se
+          encuentre solo, se puede dar clic a la circunferencia y éste dará
+          cierta información de la carpeta de investigación. La información que
+          presentará es la siguiente:
+        </p>
+
+        <div class="img-lab">
+          <img
+            class="img-lab-graph"
+            src="assets/img/methodological-note/lab-map-conglomerates.png"
+            alt=""
+            style="width: 100%;"
+          />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

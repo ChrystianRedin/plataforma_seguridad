@@ -1,0 +1,123 @@
+<div class="section-color-3" >
+  <div class="container">
+    <div class="row" style="padding-bottom: 15px; padding-top: 15px;">
+      <div class="col-lg-4 col-md-12 col-sm-12 col-12" style="padding-bottom: 15px;">
+        <mat-card class="text-center">
+          <mat-card-content>
+            <div class="text-justify">
+              <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                  <button
+                    id="id-{{ node.id }}"
+                    mat-button
+                    class="node-name"
+                    (click)="response(node)"
+                    >
+                    {{ node.name }}
+                  </button>
+                </mat-tree-node>
+                <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+                  <button
+                    class="node-name"
+                    mat-button
+                    matTreeNodeToggle
+                    [attr.aria-label]="'Toggle ' + node.name">
+                    {{ node.name }}
+                  </button>
+                </mat-tree-node>
+              </mat-tree>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <mat-card class="text-center">
+          <mat-card-content>
+              <div class="text-justify" style="color: #4C4C59;">
+                <div *ngIf="divStart == 'start'" class="start">
+                  <p>
+                    La plataforma de seguridad de Jalisco contiene dos sub-plataformas: <br> <br>
+                    1) el Laboratorio de datos y <br> 2) la de Comparativa por Estados. <br> <br> En el
+                    Laboratorio de datos se encuentran los datos de 16 delitos con un
+                    nivel de desagregación temporal (diaria) y geográfica (hasta nivel
+                    colonia); su fuente es la Fiscalía del Estado. En cambio, la
+                    Comparativa de Estados contempla todos los delitos de incidencia
+                    delictiva del fuero común (53) proporcionados por el Secretariado
+                    Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP), su
+                    desagregación temporal es mensual y la geográfica es hasta el nivel
+                    estatal.
+                  </p>
+                  <br>
+                  <h2 class="presentation-subtitle" >Consideraciones generales</h2>
+                  <br>
+                  <p>
+                    A pesar de que la plataforma de Comparativa Estatal contiene 53 tipos
+                    de delitos, existen algunos que solo se encuentran en el Laboratorio
+                    de datos. Los delitos que solo puedes encontrar en el Laboratorio de
+                    datos son: Robo a cuentahabiente, Robo a interior de vehículo y Robo
+                    de motocicleta. También se debe tomar en cuenta que el SESNSP recibe
+                    todas las actualizaciones mensuales de periodos pasados que es la
+                    fuente principal de la
+                    <span><strong>Comparativa estatal</strong></span
+                    >, en cambio la el <span><strong> Laboratorio de datos</strong></span
+                    >, al tener la georreferenciación de las carpetas de investigación,
+                    tiene más complicaciones con el seguimiento de estas actualizaciones
+                    para periodos anteriores, por lo que no siempre se puede actualizar
+                    periodos pasados y debido a esto, las cifras pudieran no coincidir en
+                    algunos casos. La actualización de ambas plataformas es mensual. A
+                    continuación, se presenta un ejemplo de lo mencionado anteriormente:
+                  </p>
+                  <p>
+                    Una carpeta de investigación se inició por lesión dolosa en julio de
+                    2020, en unos días la víctima fallece, en agosto de 2020. Debido a
+                    esto en septiembre de 2020 se cambia la tipificación del delito a
+                    homicidio doloso.
+                  </p>
+                </div>
+                <div *ngIf="divActive == 'lab-' && divStart != 'start'" class="data-lab">
+                  <div class="presentation-subtitle">Laboratorio de datos</div>
+                  <br>
+                  <p>
+                    El laboratorio de datos se divide en tres secciones: Estadísticas
+                    iniciales, Filtros y Laboratorio de datos. Las estadísticas iniciales
+                    contemplan a todos los municipios de la entidad en su último mes de
+                    actualización. Los filtros son para crear una base de datos
+                    dependiendo de la fecha, desagregación geográfica y los delitos que
+                    desee la persona usuaria. El laboratorio de datos se divide en dos
+                    apartados: la gráfica y el mapa; ambos están relacionados con la misma
+                    base de datos que se crea en la sección de filtros.
+                  </p>
+                  <p>
+                    Una carpeta de investigación se inició por lesión dolosa en julio de
+                    2020, en unos días la víctima fallece, en agosto de 2020. Debido a
+                    esto en septiembre de 2020 se cambia la tipificación del delito a
+                    homicidio doloso.
+                  </p>
+                  <br>
+                  <app-data-lab [divActiveChildDash]="divActiveChild"></app-data-lab>
+                </div>
+                <div *ngIf="divActive == 'com-' && divStart != 'start'" class="comparative-state">
+                  <div class="presentation-subtitle">Comparativa estatal</div>
+                  <br>
+                  <p>
+                    En la plataforma de Comparativa Estatal existen tres secciones: la
+                    sección de Filtros, la sección de Gráficas y la sección de Datos. En
+                    la sección de Filtros se pueden elegir el año y el mes de los que se
+                    desea obtener información. La sección de Gráficas se divide en dos
+                    apartados: 1) “Incidencia” que muestra información de todos los
+                    estados para el año y mes seleccionado y 2) el apartado de “Serie”,
+                    que presenta el comportamiento de un delito a lo largo del tiempo y su
+                    comparación con alguna entidad o el promedio del resto de las
+                    entidades del país.
+                  </p>
+                  <br>
+                  <br>
+                  <app-comparative-state [divActiveChildDash]="divActiveChild"></app-comparative-state>
+                </div>
+              </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

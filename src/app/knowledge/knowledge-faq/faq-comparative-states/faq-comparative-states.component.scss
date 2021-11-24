@@ -1,0 +1,40 @@
+.title {
+  color: #58a690;
+  font-size: 50px;
+}
+
+mat-panel-title {
+  font-size: 18px;
+  color: #58a690;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 830px) {
+  mat-panel-title {
+    font-size: 14px;
+  }
+  .text-center {
+    padding-bottom: 8em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  mat-panel-title {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  mat-panel-title {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  mat-panel-title {
+    font-size: 9px;
+  }
+}

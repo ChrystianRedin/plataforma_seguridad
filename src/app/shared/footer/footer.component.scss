@@ -1,0 +1,51 @@
+.logo_iieg {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .info-footer {
+    display: none;
+  }
+  .logos {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .logo_iieg {
+      border: none;
+      display: block;
+      .imglogoiieg {
+        width: 70%;
+      }
+    }
+    .logo_jal {
+      .imglogo {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .logos {
+    // width: 200px;
+    // padding: 10px 0;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: center;
+
+    // border: none;
+    .logo_iieg {
+      //   display: block;
+      width: 180px;
+      .imglogoiieg {
+        width: 100%;
+      }
+    }
+    .logo_jal {
+      .imglogo {
+        width: 40%;
+      }
+    }
+  }
+}

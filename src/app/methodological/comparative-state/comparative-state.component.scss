@@ -1,0 +1,60 @@
+$color-gray1: #303040;
+$color-gray2: #4c4c59;
+$color-gray3: #c1ced9;
+$color-green: #58a690;
+$color-pearl: #fbfaf6;
+
+p {
+  font-size: 16px;
+}
+
+span {
+  font-size: 16px;
+}
+
+.txt-title {
+  font-size: 24px;
+  font-weight: 650;
+  text-align: center;
+  color: $color-gray1;
+  padding: 0 0 0.5em 0;
+}
+
+.txt-sub-title {
+  font-size: 20px;
+  font-weight: 450;
+  // text-align: center;
+  padding: 0.8em 0 0.3em 0;
+  color: $color-gray1;
+}
+
+.content-graph {
+  max-width: 100%;
+}
+
+
+.tab-txt {
+  padding-top: 1em;
+}
+.img-com {
+  // width: 50%;
+  // height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-com-graph-incidence {
+  width: 50%;
+  // width: 100%;
+  // width: 80%;
+  // height: 200px;
+}
+
+.img-com-graph-serie {
+  width: 100%;
+}
+
+::ng-deep .mat-tooltip {
+  font-size: 18px !important;
+}

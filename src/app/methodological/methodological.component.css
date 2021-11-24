@@ -1,0 +1,9 @@
+/* .mat-button-focus-overlay { 
+    background-color: transparent!important; 
+    } */
+
+.example-tree-node {
+    display: flex;
+    align-items: center;
+    background-color: transparent!important; 
+    }

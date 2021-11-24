@@ -1,0 +1,145 @@
+<mat-card class="text-center">
+  <mat-card-content>
+    <div class="text-justify" style="color: #4c4c59">
+      <div class="start">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                1. ¿Cómo se definieron los delitos que podemos seleccionar?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Los delitos que se pueden seleccionar en el comparativo estatal
+              pertenecen a la categoría “Subtipo de delito” de la base de
+              incidencia delictiva del fuero común del Secretariado Ejecutivo
+              del Sistema Nacional de Seguridad Pública (SESNSP).
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                2. ¿Cómo se interpreta la gráfica Distribución estatal de la
+                tasa delictiva por el total de registros?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- Dicha visualización es una gráfica de caja y se complementa con
+              la gráfica de “Registro total de delitos por entidad”, porque los
+              colores de las entidades de ambas gráficas es el mismo. La gráfica
+              es una visualización que sirve para representar la distribución de
+              las observaciones (que debe ser una variable continua). Está
+              constituida por cinco elementos que se explican brevemente a
+              continuación:
+            </p>
+            <ul>
+              <li>
+                <strong>Caja: </strong>Es un rectángulo que abarca desde el
+                primer cuartil (Q1), o el 25% de los valores más pequeños, al
+                tercer cuartil (Q3), o el 75% de los datos más chicos.
+              </li>
+              <li>
+                <strong>Línea vertical: </strong>Es la línea negra vertical y
+                representa el valor de la mediana de las observaciones.
+                Representa dónde se acumula el 50% de los datos más pequeños y,
+                por ende, a su derecha está la otra mitad de valores mayores.
+              </li>
+              <li>
+                <strong>Líneas horizontales: </strong>Son líneas horizontales
+                que salen del la caja y su largo representa el valor 1.5 de la
+                caja. En caso de que una observación esté fuera del rango de
+                estas líneas, se considera como un dato atípico.
+              </li>
+              <li>
+                <strong>Observaciones: </strong>Son los puntos de colores, que
+                en este caso se refiere a la tasa delictiva de cada estado y su
+                color está relacionado con el color de la gráfica “Registros del
+                delito en la entidad”.
+              </li>
+              <li>
+                <strong>Valores atípicos o outliers:</strong> Son los valores
+                que sobresalen de las líneas horizontales y representan que
+                están a por lo menos 1.5 veces el rango intercuartil (Q3 – Q1)
+                del borde de la caja.
+              </li>
+            </ul>
+            <p>
+              Teniendo en cuenta lo anterior, la gráfica presenta la
+              distribución de las tasas delictivas, tomando la mediana como un
+              apoyo y las líneas horizontales pueden indicar posibles valores
+              atípicos, además que ayuda a leer los círculos que representan las
+              tasas en la gráfica “Registros del delito en la entidad”. Si se
+              enfoca en una sola entidad, si está a la izquierda de la mediana
+              significa que está en el 50% con menor tasa, caso contrario si
+              está a la derecha. En caso que la entidad se encuentre fuera de la
+              caja significa que es de las observaciones con menor (o mayor)
+              valor, entre más lejos significa que es un valor atípico en
+              comparación de los demás.
+            </p>
+            <p></p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                3. ¿Por qué existen diferencias entre los delitos reportados en
+                el laboratorio y la comparativa estatal?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <span>
+              R- Se debe tomar en cuenta que el SESNSP recibe actualizaciones
+              mensuales de periodos pasados que es la fuente principal de la
+              <span><strong>Comparativa estatal</strong></span
+              >, en cambio la <strong>Plataforma de Seguridad Estatal</strong>,
+              al tener la georreferenciación de las carpetas de investigación,
+              tiene más complicaciones con el seguimiento de estas
+              actualizaciones para periodos anteriores, por lo que no siempre se
+              puede actualizar periodos pasados y debido a esto, las cifras
+              pudieran no coincidir en algunos casos. Además, que en la
+              <strong>Plataforma de Seguridad Estatal</strong> existen algunos
+              delitos que no son contemplados en
+              <strong>Comparativa estatal</strong> como: Robo a cuentahabiente,
+              Robo a interior de vehículo y Robo de motocicleta. A continuación,
+              se presenta un ejemplo de lo mencionado anteriormente:
+            </span>
+            <p>
+              Una carpeta de investigación se inició por lesión dolosa en julio
+              de 2020, en unos días la víctima fallece, en agosto de 2020.
+              Debido a esto en septiembre de 2020 se cambia la tipificación del
+              delito a homicidio doloso.
+            </p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false"
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                4. ¿Cómo puedo descargar la base de datos?
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>
+              R- En el área de selección que se encuentra en la esquina superior
+              izquierda, se la da clic al recuadro con el nombre de “Datos” y
+              nos mandará a la sección con el mismo nombre. En la sección se
+              encontrarán dos tabulados, uno con los datos de incidencia
+              delictiva del fuero común y otro con las proyecciones de población
+              de CONAPO con las que se calculan las tasas. Existen un botón en
+              la parte de arriba a la izquierda de cada tabulado con la leyenda
+              de “Descarga”, si se le da clic, se descargará la base de datos en
+              formato “csv”.
+            </p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

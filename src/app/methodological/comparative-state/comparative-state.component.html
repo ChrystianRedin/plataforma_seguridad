@@ -1,0 +1,229 @@
+<div *ngIf="divActiveChildDash == 'com-filters'" class="data-com">
+  <br>
+  <div class="presentation-subtitle">Filtros</div>
+  <br>
+  <p>
+    En el área de Filtros hay un apartado para seleccionar todos o solamente un
+    tipo de delito con el nombre de “Delito”, conforme se cambie,
+    automáticamente se actualizará la sección de gráfica. También se puede
+    elegir el año y mes que se desee. En la parte inferior de la sección de
+    filtros se puede ver un recuadro llamado “Periodo de Comparación” que sirve
+    para modificar los parámetros del mapa de la sección de Gráficas.
+  </p>
+  <p>
+    En caso de seleccionar el apartado de “Serie” en la sección de la gráfica,
+    el apartado de filtros se modifica. En la parte superior se encuentra el
+    recuadro para elegir el delito deseado. Inmediatamente está la casilla
+    “Entidades a comparar” con dos cuadros para poder elegir las entidades que
+    la persona usuaria desea comparar.
+  </p>
+</div>
+<br>
+<div *ngIf="divActiveChildDash == 'com-graphics'" class="data-com">
+  <div class="presentation-subtitle">Gráficas</div>
+  <br>
+  <p>
+    La sección de Gráficas se divide en dos apartados: “Incidencia” y “Serie”.
+    El apartado de “Incidencia” presenta la información del año y mes elegido,
+    además de poder modificar las gráficas para visualizar únicamente un delito.
+    En el apartado de “Serie” se puede visualizar el comportamiento del delito
+    en el tiempo y realizar comparaciones con otras entidades o el promedio
+    nacional.
+  </p>
+  <br>
+  <div class="content-graph">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="Incidencia">
+        <p class="tab-txt">
+          En la parte superior presenta información del total de carpetas de
+          investigación iniciadas en la entidad a partir de los filtros
+          elegidos. También presenta la
+          <span class="tooltip"
+            style="cursor: help;"
+            matTooltip="Tasa delictiva: es el número de carpetas o averiguaciones por cada cien mil habitantes."
+            matTooltipPosition="above"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+            >tasa delictiva<strong
+              ><sup>1</sup></strong
+            ></span
+          >
+          en la entidad y el cambio porcentual que puede ser comparado con el
+          mes anterior o el mismo mes del año anterior. Inmediatamente se
+          encuentran tres visualizaciones, dos gráficas y un mapa. Todas están
+          relacionadas con lo que se seleccione en la sección de filtros. A
+          continuación, se da una breve explicación de cada una de las
+          visualizaciones:
+        </p>
+        <div class="content-graph">
+        <br>
+        <mat-tab-group mat-align-tabs="center">
+          <!-- <mat-tab label="Registros del delito en la entidad"> -->
+          <mat-tab label="Registros en la entidad">
+            <p class="tab-txt">
+              Es una gráfica que muestra dos conceptos: el valor absoluto de la
+              entidad (carpetas o averiguaciones) y su valor relativo (tasa). La
+              cantidad total de carpetas de investigación que se iniciaron en la
+              entidad en el mes y año seleccionado se muestra en las barras
+              horizontales, mientras que el tamaño de los círculos representa la
+              tasa delictiva. El orden en el que aparecen las entidades
+              federativas es de mayor a menor del valor absoluto. El color
+              simplemente es para identificar más rápido a la entidad y porque
+              se relaciona con la gráfica “Distribución estatal de la tasa
+              delictiva del delito”.
+            </p>
+            <br>
+            <div class="img-com">
+              <img
+                class="img-com-graph-records"
+                src="assets/img/methodological-note/com-gra-reco rds.png"
+                alt=""
+                style="width: 100%;"
+              />
+            </div>
+          </mat-tab>
+          <!-- <mat-tab label="Distribución estatal de la tasa delictiva del delito"> -->
+          <mat-tab label="Distribución estatal de la tasa delictiva">
+            <p class="tab-txt">
+              Es una visualización conocida como gráfica de caja o boxplot,
+              sirve para representar la distribución de las observaciones (que
+              debe ser una variable continua). Está constituida por cinco
+              elementos que se explican brevemente a continuación:
+            </p>
+            <ul>
+              <li>
+                <strong>Caja: </strong>
+                <span
+                  >Es un rectángulo que abarca desde el primer cuartil (Q1), o
+                  el 25% de los valores más pequeños, al tercer cuartil (Q3), o
+                  el 75% de los datos más chicos.</span
+                >
+              </li>
+              <li>
+                <strong>Linea vertical: </strong>
+                <span
+                  >Es la línea negra vertical y representa el valor de la
+                  mediana de las observaciones. Representa dónde se acumula el
+                  50% de los datos más pequeños y, por ende, a su derecha está
+                  la otra mitad de valores mayores.</span
+                >
+              </li>
+              <li>
+                <strong>Lineas horizontales: </strong>
+                <span
+                  >Son líneas horizontales que salen de la caja y su largo
+                  representa el valor 1.5 de la caja. En caso de que una
+                  observación esté fuera del rango de estas líneas, se considera
+                  como un dato atípico.</span
+                >
+              </li>
+              <li>
+                <strong>Observaciones: </strong>
+                <span
+                  >Son los puntos de colores, que en este caso se refiere a la
+                  tasa delictiva de cada estado y su color está relacionado con
+                  el color de la gráfica “Registros del delito en la
+                  entidad”.</span>
+              </li>
+              <li>
+                <strong>Valores atípicos o <em>outliers</em>: </strong>
+                <span
+                  >Son los valores que sobresalen de las líneas horizontales y
+                  representan que están a por lo menos 1.5 veces el rango
+                  intercuartil (Q3 – Q1) del borde de la caja.</span
+                >
+              </li>
+            </ul>
+            <p>
+              Teniendo en cuenta lo anterior, la gráfica presenta la
+              distribución de las tasas delictivas, tomando la mediana como un
+              apoyo y las líneas horizontales pueden indicar posibles valores
+              atípicos, además que ayuda a leer la gráfica “Registros del delito
+              en la entidad”.
+            </p>
+            <br>
+            <div class="img-com">
+              <img
+                class="img-com-graph-distribution"
+                src="assets/img/methodological-note/com-gra-distribution.png"
+                alt=""
+                width="100%"
+              />
+            </div>
+          </mat-tab>
+          <!-- <mat-tab label="Cambio porcentual en registros del delito"> -->
+          <mat-tab label="Cambio porcentual en registros">
+            <p class="tab-txt">
+              El mapa muestra las 32 entidades federativas y el cambio
+              porcentual que puede ser con respecto al mismo mes del año
+              anterior o del mes anterior (esto se puede modificar en el área de
+              filtros). En la esquina inferior izquierda, se muestra la escala
+              del cambio porcentual, entre más amarillo quiere decir un aumento
+              porcentual mayor y entre más morado significa una mayor
+              disminución en el número de carpetas o averiguaciones. En delitos
+              en que se registra una cantidad relativamente pequeña de carpetas
+              de investigación, puede pasar que la escala tenga valores muy
+              distantes.
+            </p>
+            <br>
+            <div class="img-com">
+              <img
+                class="img-com-graph-incidence"
+                src="assets/img/methodological-note/com-gra-records-crime.png"
+                alt=""
+                width="100%"
+              />
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Serie">
+        <p class="tab-txt">
+          El apartado de “Serie” presenta una gráfica de serie tiempo del delito
+          seleccionado o del total de delitos. Permite comparar entre entidades
+          federativas o una entidad con el promedio nacional. Para obtener el
+          promedio, se divide la suma de todas las carpetas de investigación
+          excepto las carpetas de la entidad que se va a comparar, entre las 32
+          entidades.
+        </p>
+        <p>
+          La gráfica tiene la cualidad de ser interactiva, esto quiere decir que
+          la persona usuaria puede modificarla. En la parte superior derecha del
+          gráfico se pueden ver los valores de cada uno de los puntos. Se puede
+          hacer clic en una parte del gráfico y se empezará a dibujar un
+          rectángulo que servirá para acercar a la persona usuaria a las fechas
+          de su interés. También en la parte inferior se encuentra una línea de
+          tiempo que se puede modificar para enfocarse en ciertos periodos.
+        </p>
+        <div class="img-com">
+          <img
+            class="img-com-graph-serie"
+            src="assets/img/methodological-note/com-gra-serie.png"
+            alt=""
+            width="100%"
+          />
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+<div *ngIf="divActiveChildDash == 'com-data'" class="data-com">
+  <div class="presentation-subtitle">Datos</div>
+  <br>
+  <p>
+    En esta sección se encuentran las dos bases de datos con las que se crea la
+    plataforma de Comparativa Estatal. Una contiene la información de la
+    incidencia delictiva del SESNSP y la otra son las proyecciones de población
+    a mitad de año del CONAPO.
+  </p>
+  <p>
+    En caso de que la persona usuaria quiera buscar únicamente un valor de
+    cualquiera de las dos bases de datos, lo puede hacer en la sección de
+    “Datos”. Hasta la derecha de cada base se encuentra el buscador que ayuda a
+    realizar ciertos filtros. Además, en cada variable se puede modificar su
+    ordenamiento. Existe la posibilidad de descargar las bases de datos para
+    aquellas personas que prefieran interactuar con la información.
+  </p>
+</div>

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Mittelschrift';
+    src: url('../src/assets/fonts/Mittelschrift.otf'),
+        url('../src/assets/fonts/Mittelschrift.otf');
+    font-weight: 60;
+    font-style: normal;
+}
+
+body {
+    font-family: din-alternate, 'Mittelschrift', sans-serif;
+    margin: 0;
+    
+}
+
+::-webkit-scrollbar {
+  
+    overflow: hidden; /* Hide scrollbars */
+  }

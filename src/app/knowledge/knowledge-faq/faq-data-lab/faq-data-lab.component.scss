@@ -1,0 +1,86 @@
+.title {
+  color: #58a690;
+  font-size: 50px;
+}
+
+mat-panel-title {
+  font-size: 18px;
+  color: #58a690;
+}
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.mat-panel-title-sub {
+  color: #4c4c59;
+}
+
+.img-lab {
+  padding: 20px 0;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .hijo_1 {
+    width: 49%;
+  }
+  .hijo_2 {
+    width: 49%;
+  }
+}
+
+.img-lab-graph {
+  width: 100%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  mat-panel-title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 506px) {
+  .mat-panel-title-sub {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  mat-panel-title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .mat-panel-title-sub {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  mat-panel-title {
+    font-size: 12px;
+  }
+  .mat-panel-title-sub {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .mat-panel-title-sub {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  mat-panel-title {
+    font-size: 12px;
+  }
+  .mat-panel-title-sub {
+    font-size: 9.5px;
+  }
+}

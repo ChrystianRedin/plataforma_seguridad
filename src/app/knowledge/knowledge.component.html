@@ -1,0 +1,41 @@
+<div class="section-color-3">
+  <div class="container">
+    <div class="row" style="padding-bottom: 15px; padding-top: 15px">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+        <mat-card class="text-center" style="margin-bottom: 20px">
+          <mat-card-content>
+            <div class="text-justify">
+              En esta sección te mostramos los tutoriales para el uso de la
+              plataforma, así como las preguntas y respuestas más frecuentes.
+              Continuamente estaremos añadiendo más contenido.
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-content>
+            <div class="content-graph">
+              <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="VIDEO TUTORIALES">
+                  <app-knowledge-tutorials-videos></app-knowledge-tutorials-videos>
+                </mat-tab>
+                <mat-tab label="PREGUNTAS FRECUENTES">
+                  <br />
+                  <div class="content-graph">
+                    <mat-tab-group mat-align-tabs="center">
+                      <mat-tab label="Laboratorio de Datos">
+                        <app-faq-data-lab></app-faq-data-lab>
+                      </mat-tab>
+                      <mat-tab label="Comparativa estatal">
+                        <app-faq-comparative-states></app-faq-comparative-states>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
